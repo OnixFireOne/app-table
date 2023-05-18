@@ -1,0 +1,264 @@
+[
+  {
+    "id": 1,
+    "title": "Графики",
+    "links": [
+      {
+        "title": "Tradingview",
+        "url": "https://#",
+        "thumbnailUrl": "https://inp.one/news-lite/assets/img/shotTest5.gif",
+        "id": 1
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Агрегаторы",
+    "links": [
+      {
+        "id": 1,
+        "title": "CoinMarketCap",
+        "url": "https://coinmarketcap.com/currencies/bnb",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/coinmarketNav.gif"
+      },
+      {
+        "id": 2,
+        "title": "Coingecko",
+        "url": "https://www.coingecko.com/en/coins/bnb",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/coinGeckoNav.gif"
+      },
+      {
+        "id": 3,
+        "title": "Messari",
+        "url": "https://messari.io/asset/binance-coin",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/messeriNav.gif"
+      },
+      {
+        "id": 4,
+        "title": "Cryptorank",
+        "url": "https://cryptorank.io/price/bnb",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/cryptorankNav.gif"
+      },
+      {
+        "id": 5,
+        "title": "Dropstab",
+        "url": "https://dropstab.com/coins/binancecoin",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/dropstabNav.gif"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Обмен",
+    "default": true,
+    "links": [
+      {
+        "id": 1,
+        "title": "BestChange",
+        "url": "https://www.bestchange.net/binance-coin-to-visa-mastercard-usd.html?p=54580",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/bestchangeNav.gif"
+      },
+      {
+        "id": 2,
+        "title": "Converter",
+        "url": "https://www.coingecko.com/ru/converter",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/coingecoconverterNav.gif"
+      },
+      {
+        "id": 3,
+        "title": "Markets",
+        "url": "https://www.coingecko.com/en/coins/tether#markets",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/marketsNav.gif",
+        "urls": [
+          {
+            "id": 1,
+            "title": "Coingecko",
+            "url": "https://www.coingecko.com/en/coins/bnb#markets"
+          },
+          {
+            "id": 2,
+            "title": "CoinMarketCap",
+            "url": "https://coinmarketcap.com/currencies/bnb/markets/"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Binance",
+        "url": "https://www.binance.com/en/trade/!_USDT?ref=10106896",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/binanceNav.gif",
+        "urls": [
+          {
+
+            "title": "!>USDT",
+            "url": "https://www.binance.com/en/trade/!_USDT?ref=10106896"
+          },
+          {
+            "title": "!>EUR",
+            "url": "https://www.binance.com/en/trade/!_EUR?ref=10106896"}
+        ]
+      },
+      {
+        "id": 5,
+        "title": "OKX",
+        "url": "https://www.okx.com/trade-spot/!-usdt/1905037",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/okxNav.gif",
+        "urls": [
+          {
+
+            "title": "!>USDT",
+            "url": "https://www.okx.com/trade-spot/!-usdt/1905037"
+          },
+          {
+            "title": "!>USDC",
+            "url": "https://www.okx.com/trade-spot/!-usdc/1905037"}
+        ]
+      },
+      {
+        "id": 6,
+        "title": "Bitget",
+        "url": "https://www.bitget.com/en/spot/!USDT_SPBL?from=referral&clacCode=5LUC5JDZ",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/bitgetNav.gif",
+        "urls": [
+          {
+
+            "title": "!>USDT",
+            "url": "https://www.bitget.com/en/spot/!USDT_SPBL?from=referral&clacCode=5LUC5JDZ"
+          },
+          {
+            "title": "!>USDC",
+            "url": "https://www.bitget.com/en/spot/!USDC_SPBL?from=referral&clacCode=5LUC5JDZ"}
+        ]
+      },
+      {
+        "id": 7,
+        "title": "MEXC",
+        "url": "https://www.mexc.com/exchange/!_USDT?inviteCode=1PcY4",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/mexcNav.gif",
+        "urls": [
+          {
+
+            "title": "!>USDT",
+            "url": "https://www.mexc.com/exchange/!_USDT?inviteCode=1PcY4"
+          },
+          {
+            "title": "!>BUSD",
+            "url": "https://www.mexc.com/exchange/!_BUSD?inviteCode=1PcY4"}
+        ]
+      },
+      {
+        "id": 8,
+        "title": "Bybit",
+        "url": "https://www.bybit.com/trade/spot/!/USDT/?ref=W6YXQE",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/bybitNav.gif",
+        "urls": [
+          {
+
+            "title": "!>USDT",
+            "url": "https://www.bybit.com/trade/spot/!/USDT/?ref=W6YXQE"
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "title": "Kucoin",
+        "url": "https://www.kucoin.com/trade/!-USDT?r=E47sGK",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/kucoinNav.gif",
+        "urls": [
+          {
+
+            "title": "!>USDT",
+            "url": "https://www.kucoin.com/trade/!-USDT?r=E47sGK"
+          },
+          {
+            "title": "!>USDC",
+            "url": "https://www.kucoin.com/trade/!-USDC?r=E47sGK"}
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Календарь",
+    "links": [
+      {
+        "id": 1,
+        "title": "CoinMarketCal",
+        "url": "https://coinmarketcal.com/ru/?form%5Bdate_range%5D=07%2F01%2F2023+-+01%2F08%2F2024&form%5Bkeyword%5D=&form%5Bcoin%5D%5B%5D=binance-coin&form%5Bsort_by%5D=&form%5Bsubmit%5D=&form%5Bshow_reset%5D=",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/coinmarketcalNav.gif"
+      },
+      {
+        "id": 2,
+        "title": "Coindar",
+        "url": "https://coindar.org/ru/search?page=1&text=&start=2023-01-05&cats=&im=&rs=0&fav=0&coins=39&cap_from=0&cap_to=9999999999999&vol_from=0&vol_to=9999999999999&ex=&sort=0&order=0",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/coindarNav.gif"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Обзоры",
+    "links": [
+      {
+        "id": 1,
+        "title": "INP",
+        "url": "https://inp.one/cryptoworld/binance",
+        "thumbnailUrl": "https://inp.one/apple-touch-icon.png"
+      },
+      {
+        "id": 2,
+        "title": "Binance",
+        "url": "https://www.binance.com/",
+        "thumbnailUrl": "https://assets.coingecko.com/coins/images/825/large/bnb-icon2_2x.png?1644979850"
+      },
+      {
+        "id": 3,
+        "title": "Whitepaper",
+        "url": "https://tether.to/wp-content/uploads/2016/06/TetherWhitePaper.pdf",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/whitepaperNav.gif"
+      },
+      {
+        "id": 4,
+        "title": "Bitcointalk",
+        "url": "https://bitcointalk.org/index.php?topic=2080842.0",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/bitcointalkNav.gif"
+      },
+      {
+        "id": 5,
+        "title": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Binance",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/wikiNav.gif"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Разное",
+    "links": [
+      {
+        "title": "Explorer.Binance",
+        "url": "https://explorer.binance.org/",
+        "thumbnailUrl": "https://assets.coingecko.com/coins/images/825/large/bnb-icon2_2x.png?1644979850",
+        "id": 1
+      },
+      {
+        "title": "twitter",
+        "url": "https://twitter.com/binance",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/twitterNav.gif",
+        "id": 2
+      },
+      {
+        "title": "Reddit",
+        "url": "https://www.reddit.com/r/binance",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/redditNav.gif",
+        "id": 3
+      },
+      {
+        "title": "Telegram",
+        "url": "https://t.me/binance_announcements",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/redditNav.gif",
+        "id": 3
+      }
+    ]
+  }
+]

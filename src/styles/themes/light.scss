@@ -1,0 +1,17 @@
+// src/styles/themes/_light.scss
+@use '@angular/material' as mat;
+
+$app-light-primary: mat.define-palette(mat.$indigo-palette);
+$app-light-accent: mat.define-palette(mat.$purple-palette);
+
+$app-light-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $app-light-primary,
+      accent: $app-light-accent,
+    ),
+    typography: mat.define-typography-config(),
+    density: 0,
+  )
+);
+

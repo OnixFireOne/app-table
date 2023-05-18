@@ -1,0 +1,200 @@
+[
+  {
+    "id": 1,
+    "title": "Графики",
+    "links": [
+      {
+        "title": "Tradingview",
+        "url": "https://#",
+        "thumbnailUrl": "https://inp.one/news-lite/assets/img/shotTest5.gif",
+        "id": 1
+      },
+      {
+        "title": "Cтрах",
+        "url": "https://alternative.me/crypto/fear-and-greed-index/",
+        "thumbnailUrl": "https://alternative.me/crypto/fear-and-greed-index.png",
+        "id": 2
+      },
+      {
+        "title": "Ликвидация",
+        "url": "https://www.coinglass.com/ru/LiquidationData",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/coinglassNav.gif",
+        "id": 3
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Агрегаторы",
+    "links": [
+      {
+        "id": 1,
+        "title": "CoinMarketCap",
+        "url": "https://coinmarketcap.com/",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/coinmarketNav.gif"
+      },
+      {
+        "id": 2,
+        "title": "Coingecko",
+        "url": "https://www.coingecko.com/",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/coinGeckoNav.gif"
+      },
+      {
+        "id": 3,
+        "title": "Messari",
+        "url": "https://messari.io/asset/",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/messeriNav.gif"
+      },
+      {
+        "id": 4,
+        "title": "Cryptorank",
+        "url": "https://cryptorank.io/",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/cryptorankNav.gif"
+      },
+      {
+        "id": 5,
+        "title": "Dropstab",
+        "url": "https://dropstab.com/",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/dropstabNav.gif"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Обмен",
+    "links": [
+      {
+        "id": 1,
+        "title": "BestChange",
+        "url": "https://www.bestchange.net/?p=54580",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/bestchangeNav.gif"
+      },
+      {
+        "id": 2,
+        "title": "Converter",
+        "url": "https://www.coingecko.com/ru/converter",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/coingecoconverterNav.gif"
+      },
+      {
+        "id": 3,
+        "title": "Markets",
+        "url": "https://www.coingecko.com/en/coins/tether#markets",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/marketsNav.gif",
+        "urls": [
+          {
+            "id": 1,
+            "title": "Coingecko",
+            "url": "https://www.coingecko.com/en/coins/markets"
+          },
+          {
+            "id": 2,
+            "title": "CoinMarketCap",
+            "url": "https://coinmarketcap.com/markets/"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Binance",
+        "url": "https://www.binance.com/en/trade?ref=10106896",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/binanceNav.gif"
+      },
+      {
+        "id": 5,
+        "title": "OKX",
+        "url": "https://www.okx.com/trade-spot/1905037",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/okxNav.gif"
+      },
+      {
+        "id": 6,
+        "title": "Bitget",
+        "url": "https://www.bitget.com/en/spot/?from=referral&clacCode=5LUC5JDZ",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/bitgetNav.gif"
+      },
+      {
+        "id": 7,
+        "title": "MEXC",
+        "url": "https://www.bybit.com/trade/spot/?inviteCode=1PcY4",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/mexcNav.gif"
+      },
+      {
+        "id": 8,
+        "title": "Bybit",
+        "url": "https://www.bybit.com/trade/spot/?ref=W6YXQE",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/bybitNav.gif"
+      },
+      {
+        "id": 9,
+        "title": "Kucoin",
+        "url": "https://www.kucoin.com/trade/?r=E47sGK",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/kucoinNav.gif"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Календарь",
+    "links": [
+      {
+        "id": 1,
+        "title": "CoinMarketCal",
+        "url": "https://coinmarketcal.com/",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/coinmarketcalNav.gif"
+      },
+      {
+        "id": 2,
+        "title": "Coindar",
+        "url": "https://coindar.org/",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/coindarNav.gif"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Обзоры",
+    "links": [
+      {
+        "id": 1,
+        "title": "INP",
+        "url": "https://inp.one/cryptoworld/",
+        "thumbnailUrl": "https://inp.one/apple-touch-icon.png"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Разное",
+    "links": [
+      {
+        "id": 1,
+        "url": "https://www.blockchain.com/explorer/charts",
+        "title": "BitStatistics",
+        "thumbnailUrl": "https://inp.one/news-lite/assets/img/shotTest21.gif"
+      },
+      {
+        "id": 2,
+        "url": "https://www.binance.vision/ru/halving",
+        "title": "Halving",
+        "thumbnailUrl": "https://inp.one/news-lite/assets/img/shotTest7-2.gif"
+      },
+      {
+        "id": 3,
+        "url": "https://bitinfocharts.com/ru/top-100-richest-bitcoin-addresses.html",
+        "title": "Топ 100 богатейших Bitcoin кошельков",
+        "thumbnailUrl": "https://inp.one/news-lite/assets/img/shotTest19.gif"
+      },
+      {
+        "id": 4,
+        "url": "https://coinmarketcap.com/converter/",
+        "title": "Converter",
+        "thumbnailUrl": "https://inp.one/news-lite/assets/img/shotTest10.gif"
+      },
+      {
+        "id": 5,
+        "url": "https://coin360.com/",
+        "title": "Карта Крипты",
+        "thumbnailUrl": "https://inp.one/news-lite/assets/img/shotTest8.gif"
+      }
+    ]
+  }
+]

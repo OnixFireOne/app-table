@@ -1,0 +1,10 @@
+<div class="flex flex-row flex-wrap min-h-screen">
+<!--<ng-template appAddComponent class="mw-w-3xl mx-auto"></ng-template>-->
+<!--  <app-sidbar class="container max-w-xs"></app-sidbar>-->
+
+<div class="container mx-auto flex flex-col" [ngClass]="settingCheck()" [class.md:max-w-4xl]="!settingsTableService.settingsTable.month">
+  <app-table></app-table>
+</div>
+<!--  <app-sidbar class="container max-w-xs"></app-sidbar>-->
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,18 @@
+// src/styles/themes/dark.scss
+@use "@angular/material" as mat;
+
+$app-dark-primary: mat.define-palette(mat.$purple-palette);
+$app-dark-accent: mat.define-palette(mat.$green-palette);
+
+$app-dark-theme: mat.define-dark-theme((
+      color: (
+        primary: $app-dark-primary,
+        accent: $app-dark-accent,
+      ),
+    )
+);
+
+.dark-theme {
+  /*@include mat.core-color($app-dark-theme);
+  @include mat.button-color($app-dark-theme);*/
+}

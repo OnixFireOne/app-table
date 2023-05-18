@@ -1,0 +1,39 @@
+<!--<mat-progress-bar *ngIf="isLoadingScript" mode="indeterminate"></mat-progress-bar>-->
+
+<div class="relative p-1">
+  <div class="absolute top-0 right-0 left-0">
+    <mat-progress-bar *ngIf="isLoadingScript" mode="indeterminate"></mat-progress-bar>
+  </div>
+
+  <!--  <div class="flex justify-between">-->
+  <!--    <h2 mat-dialog-title>{{data.name}}</h2>-->
+
+  <!--    <mat-dialog-actions>-->
+  <!--      <button mat-icon-button (click)="closeDialog()">-->
+  <!--        <mat-icon>close</mat-icon>-->
+  <!--      </button>-->
+  <!--    </mat-dialog-actions>-->
+  <!--  </div>-->
+
+  <div class="mat-typography" *ngIf="data">
+    <!-- TradingView Widget BEGIN -->
+    <div class="tradingview-widget-container" id="tradingView">
+      <div id="tradingview_0e350" class="h-full"></div>
+    </div>
+    <!-- TradingView Widget END -->
+  </div>
+</div>
+
+<mat-dialog-actions align="end">
+  <button mat-flat-button (click)="closeDialog()"><mat-icon>close</mat-icon>Close</button>
+</mat-dialog-actions>
+
+
+<!--<mat-dialog-content class="mat-typography" *ngIf="data">-->
+<!--  &lt;!&ndash; TradingView Widget BEGIN &ndash;&gt;-->
+<!--  <div class="tradingview-widget-container" id="tradingView">-->
+<!--    <div id="tradingview_0e350" class="h-full"></div>-->
+<!--  </div>-->
+<!--  &lt;!&ndash; TradingView Widget END &ndash;&gt;-->
+<!--</mat-dialog-content>-->
+

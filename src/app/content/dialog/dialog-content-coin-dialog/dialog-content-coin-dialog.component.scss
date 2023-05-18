@@ -1,0 +1,13 @@
+.tradingview-widget-container{
+  height: 570px;
+}
+@media (min-width: 768px) {
+  .tradingview-widget-container{
+    width: 680px;
+  }
+}
+@media (min-width: 1024px){
+  .tradingview-widget-container{
+    width: 980px;
+  }
+}

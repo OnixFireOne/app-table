@@ -1,0 +1,280 @@
+<div class="h-4">
+  <mat-progress-bar
+    *ngIf="isLoadingProgressBar"
+    mode="indeterminate"></mat-progress-bar>
+</div>
+
+<div *ngIf="dataCoin" class="flex flex-col md:grid md:grid-cols-10">
+  <div class="ml-5 flex flex-row justify-between items-center md:col-span-2">
+    <button mat-icon-button (click)="closeSideNav()">
+      <mat-icon>close</mat-icon>
+    </button>
+
+    <div *ngIf="dataCoin.name != 'All'" class="flex flex-row mr-9 md:hidden">
+      <div class="flex flex-col">
+        <span class="text-xs text-center opacity-50">month</span>
+        <span class="text-xs"
+              [ngClass]="addClassText(dataCoin.price_change_percentage_30d_in_currency)"
+        >
+        <span
+          *ngIf="dataCoin.price_change_percentage_30d_in_currency > 0">+</span>{{dataCoin.price_change_percentage_30d_in_currency | number : '1.0-2'}}
+          %
+        </span>
+      </div>
+      <div class="ml-3 flex flex-col">
+        <span class="text-xs text-center opacity-50">year</span>
+        <span class="text-xs"
+              [ngClass]="addClassText(dataCoin.price_change_percentage_1y_in_currency)"
+        ><span
+          *ngIf="dataCoin.price_change_percentage_1y_in_currency > 0">+</span>{{dataCoin.price_change_percentage_1y_in_currency | number : '1.0-2'}}
+          %
+        </span>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="md:col-span-6 md:justify-self-center md:place-self-center flex justify-center text-3xl">
+    <ng-container *ngIf="dataCoin.name != 'All'; else crypto">
+      <span>{{dataCoin.name}} </span>
+      <span>({{dataCoin.symbol | uppercase}})</span>
+    </ng-container>
+
+    <ng-template #crypto>
+      <span>All </span>
+      <span>cryptocurrency</span>
+    </ng-template>
+  </div>
+
+  <div *ngIf="dataCoin.name != 'All'"
+       class="max-sm:hidden md:visible md:col-span-2 mr-9 flex flex-row place-self-center justify-self-end">
+
+    <div class="flex flex-col">
+      <span class="text-xs text-center opacity-50">month</span>
+      <span class="text-xs"
+            [ngClass]="addClassText(dataCoin.price_change_percentage_30d_in_currency)"
+      >
+        <span
+          *ngIf="dataCoin.price_change_percentage_30d_in_currency > 0">+</span>{{dataCoin.price_change_percentage_30d_in_currency | number : '1.0-2'}}
+        %
+        </span>
+    </div>
+    <div class="ml-3 flex flex-col">
+      <span class="text-xs text-center opacity-50">year</span>
+      <span class="text-xs"
+            [ngClass]="addClassText(dataCoin.price_change_percentage_1y_in_currency)"
+      ><span
+        *ngIf="dataCoin.price_change_percentage_1y_in_currency > 0">+</span>{{dataCoin.price_change_percentage_1y_in_currency | number : '1.0-2'}}
+        %
+        </span>
+    </div>
+  </div>
+</div>
+<ng-container *ngIf="dataCoin">
+  <div *ngIf="dataCoin.name != 'All'" class="mx-9">
+    <div class="opacity-50 mb-3 flex justify-center">
+      <span [matTooltip]="dataCoin.ath_date | date">{{dataCoin.ath | currency :'': 'symbol': '1.0-2'}}</span>
+      <span class="mr-5" matTooltip="From to the current price"
+            matTooltipShowDelay="300"> ({{dataCoin.ath / dataCoin.current_price * 100 - 100 | number :'1.0-2'}}%)</span>
+      <span [matTooltip]="dataCoin.atl_date | date">{{dataCoin.atl | currency: '': 'symbol': '1.1-5'}}</span>
+      <span matTooltip="From to the current price"
+            matTooltipShowDelay="300"> ({{dataCoin.atl_change_percentage | number :'1.0-2'}}%)</span>
+    </div>
+    <div class="pb-3" *ngIf="supply; else buffer" matTooltipClass="whitespace-pre-line" matTooltipShowDelay="300"
+         [matTooltip]="supplyTooltip()">
+      <mat-progress-bar mode="determinate" [value]="supply"></mat-progress-bar>
+    </div>
+    <ng-template #buffer>
+      <div class="pb-3" *ngIf="dataCoin" matTooltipShowDelay="200"
+           [matTooltip]="'Supply: ' + (dataCoin.circulating_supply | number:'1.0-0')">
+        <mat-progress-bar mode="determinate" bufferValue="100"></mat-progress-bar>
+      </div>
+    </ng-template>
+  </div>
+</ng-container>
+
+
+<!--<div class="grid grid-cols-1">-->
+<!--  <button class="ml-5" mat-icon-button (click)="closeSideNav()">-->
+<!--    <mat-icon>close</mat-icon>-->
+<!--  </button>-->
+<!--  <div *ngIf="dataCoin" class="justify-self-center place-self-center text-3xl">{{dataCoin.name}}({{dataCoin.symbol | uppercase}})</div>-->
+<!--</div>-->
+<div (mousemove)="moveCloseNav($event)" (mousedown)="mouseDown = true" (mouseup)="mouseDown = false">
+  <div class="mt-3 mx-9 transition-opacity ease-in-out duration-500"
+       [class.opacity-0]="isLoadingProgressBar">
+
+    <mat-slide-toggle [(ngModel)]="toggles" (change)="windowOpenSlideChange($event)"
+                      matTooltip="Open links in a new browser window">
+      <div class="flex flex-row items-center">
+        <mat-icon>web_asset</mat-icon>
+      </div>
+    </mat-slide-toggle>
+
+    <div class="mt-4 relative">
+      <div class="absolute h-full w-full z-10 top-0 left-0" [class.hidden]="!isLoadingContent"></div>
+      <ng-container *ngFor="let block of dataCoinContent">
+
+        <div class="flex flex-row transition-opacity duration-300"
+             [class.opacity-0]="isLoadingContent"
+        >
+          <div class="flex flex-row">
+          <span class="w-full opacity-50 text-base">{{block.title}}
+            <mat-icon *ngIf="block.alert" class="pt-1" color="primary"
+                      matTooltip="Links are generated automatically: there may be discrepancies with reality">warning</mat-icon></span>
+          </div>
+
+          <div class="flex-1 pl-9 pt-3">
+            <mat-divider></mat-divider>
+          </div>
+        </div>
+
+        <div
+          class="grid grid-cols-5 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 gap-4 justify-items-center mt-5 mb-4 transition-opacity duration-300"
+          [class.opacity-0]="isLoadingContent">
+          <ng-container *ngFor="let card of block.links">
+
+            <div *ngIf="!(menuArray.includes(card.title) || card.menuActive); else menu">
+              <div class="hover:scale-105 active:scale-110 transition-transform cursor-pointer">
+                <a href="{{card.url}}" target="_blank" (click)="cardCoinListener(card,block,$event)">
+                  <mat-card mat-ripple class="w-14 h-14" [matTooltip]="(card.desc)? card.desc : card.title">
+                    <img class="h-full" loading="lazy" mat-card-image src="{{card.thumbnailUrl}}" alt="{{card.title}}">
+                  </mat-card>
+                </a>
+              </div>
+              <div class="flex flex-row justify-center items-center flex-wrap text-xs-card w-full my-1 opacity-50">
+                <span>{{card.title | slice:0: 11}}</span>
+              </div>
+
+            </div>
+
+            <ng-template #menu>
+              <div>
+                <div class="hover:scale-105 active:scale-110 transition-transform cursor-pointer">
+                  <mat-card mat-ripple class="w-14 h-14" (click)="menuUrls(card,block)"
+                            [matTooltip]="(card.desc)? card.desc : card.title" [matMenuTriggerFor]="menuMarkets">
+                    <img class="h-full" loading="lazy" mat-card-image src="{{card.thumbnailUrl}}" alt="{{card.title}}">
+                  </mat-card>
+                </div>
+                <div class="flex flex-row justify-center items-center flex-wrap text-xs-card w-full my-1 opacity-50">
+                  <span>{{card.title | slice:0: 11}}</span>
+                </div>
+
+              </div>
+              <mat-menu #menuMarkets="matMenu">
+                <ng-container *ngFor="let item of card.urls">
+                  <a href="{{item.url}}" target="_blank" (click)="menuClick($event,item)">
+                    <button mat-menu-item>{{item.title}}</button>
+                  </a>
+                </ng-container>
+              </mat-menu>
+            </ng-template>
+
+
+          </ng-container>
+        </div>
+        <!--          <p class="opacity-70">{{block.text}}</p>-->
+      </ng-container>
+      <!--    <mat-tab-group fitInkBarToContent disablePagination="true">-->
+      <!--      <mat-tab label="Link">-->
+      <!--        <ng-container *ngFor="let block of dataCoinContent">-->
+
+      <!--          <div class="mt-7 flex flex-row transition-opacity duration-300"-->
+      <!--               [class.opacity-0]="isLoadingContent"-->
+      <!--          >-->
+      <!--            <h2>{{block.title}}</h2>-->
+      <!--            <div class="w-full pl-9 pt-4">-->
+      <!--              <mat-divider></mat-divider>-->
+      <!--            </div>-->
+      <!--          </div>-->
+
+      <!--          <div class="grid grid-cols-6 gap-4 justify-items-center my-5 transition-opacity duration-300"-->
+      <!--               [class.opacity-0]="isLoadingContent">-->
+      <!--            <ng-container *ngFor="let card of block.links">-->
+
+      <!--              <div *ngIf="!menuArray.includes(card.title); else menu">-->
+      <!--                <div class="hover:scale-105 active:scale-110 transition-transform cursor-pointer">-->
+      <!--                  <mat-card mat-ripple class="w-20 h-20" [matTooltip]="card.title" (click)="cardCoinListener(card,block)">-->
+      <!--                    <img class="h-full" loading="lazy" mat-card-image src="{{card.thumbnailUrl}}" alt="{{card.title}}">-->
+      <!--                  </mat-card>-->
+      <!--                </div>-->
+      <!--                <div class="flex flex-row justify-center items-center flex-wrap text-xs w-full my-1 opacity-50">-->
+      <!--                  <span>{{card.title | titlecase | slice:0: 10}}</span>-->
+      <!--                </div>-->
+
+      <!--              </div>-->
+
+      <!--              <ng-template #menu>-->
+      <!--                <div>-->
+      <!--                  <div class="hover:scale-105 active:scale-110 transition-transform cursor-pointer">-->
+      <!--                    <mat-card mat-ripple class="w-20 h-20 text-3xl" [matTooltip]="card.title" [matMenuTriggerFor]="menuMarkets">-->
+      <!--                      <img class="h-full" loading="lazy" mat-card-image src="{{card.thumbnailUrl}}" alt="{{card.title}}">-->
+      <!--                    </mat-card>-->
+      <!--                  </div>-->
+      <!--                  <div class="flex flex-row justify-center items-center flex-wrap text-xs w-full my-1 opacity-50">-->
+      <!--                    <span>{{card.title | titlecase | slice:0: 10}}</span>-->
+      <!--                  </div>-->
+
+      <!--                </div>-->
+      <!--                <mat-menu #menuMarkets="matMenu">-->
+      <!--                  <a href="{{card.url}}" target="_blank">-->
+      <!--                    <button mat-menu-item>{{card.title}}</button>-->
+      <!--                  </a>-->
+      <!--                  <mat-divider></mat-divider>-->
+      <!--                  <ng-container *ngFor="let item of card.urls">-->
+      <!--                    <a href="{{item.url}}" target="_blank">-->
+      <!--                      <button mat-menu-item>{{item.title}}</button>-->
+      <!--                    </a>-->
+      <!--                  </ng-container>-->
+      <!--                </mat-menu>-->
+      <!--              </ng-template>-->
+
+
+      <!--            </ng-container>-->
+      <!--          </div>-->
+      <!--          &lt;!&ndash;          <p class="opacity-70">{{block.text}}</p>&ndash;&gt;-->
+      <!--        </ng-container>-->
+      <!--      </mat-tab>-->
+      <!--      <mat-tab label="Buy">-->
+      <!--        <ng-container *ngFor="let block of dataCoinContent">-->
+
+      <!--          <div class="mt-7 flex flex-row transition-opacity duration-300"-->
+      <!--               [class.opacity-0]="isLoadingContent"-->
+      <!--          >-->
+      <!--            <h2>{{block.title}}</h2>-->
+      <!--            <div class="w-full pl-9 pt-4">-->
+      <!--              <mat-divider></mat-divider>-->
+      <!--            </div>-->
+      <!--          </div>-->
+
+      <!--          <div class="grid grid-cols-6 gap-4 justify-items-center my-5 transition-opacity duration-300"-->
+      <!--               [class.opacity-0]="isLoadingContent">-->
+      <!--            <ng-container *ngFor="let card of block.links">-->
+
+      <!--              <div>-->
+      <!--                <div class="hover:scale-105 active:scale-110 transition-transform cursor-pointer">-->
+      <!--                  <mat-card mat-ripple class="w-20 h-20" [matTooltip]="card.title" (click)="cardCoinListener(card,block)">-->
+      <!--                    <img class="h-full" loading="lazy" mat-card-image src="{{card.thumbnailUrl}}" alt="{{card.title}}">-->
+      <!--                  </mat-card>-->
+      <!--                </div>-->
+      <!--                <div class="flex flex-row justify-center items-center flex-wrap text-xs w-full my-1 opacity-50">-->
+      <!--                  <span>{{card.title | titlecase | slice:0: 10}}</span>-->
+      <!--                </div>-->
+
+      <!--              </div>-->
+
+      <!--            </ng-container>-->
+      <!--          </div>-->
+      <!--          &lt;!&ndash;          <p class="opacity-70">{{block.text}}</p>&ndash;&gt;-->
+      <!--        </ng-container>-->
+      <!--      </mat-tab>-->
+      <!--      <mat-tab label="NFT">-->
+      <!--        <p>NFT</p>-->
+      <!--      </mat-tab>-->
+      <!--    </mat-tab-group>-->
+    </div>
+
+
+  </div>
+</div>
+

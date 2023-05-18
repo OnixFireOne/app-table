@@ -1,0 +1,483 @@
+[
+  {
+    "id": 1,
+    "title": "Charts",
+    "links": [
+      {
+        "title": "Tradingview",
+        "url": "https://#",
+        "thumbnailUrl": "https://inp.one/news-lite/assets/img/shotTest5.gif",
+        "id": 1
+      },
+      {
+        "title": "Fear",
+        "desc": "Fear and greed index",
+        "url": "https://alternative.me/crypto/fear-and-greed-index/",
+        "thumbnailUrl": "https://alternative.me/crypto/fear-and-greed-index.png",
+        "id": 2
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Aggregators",
+    "default": false,
+    "links": [
+      {
+        "id": 1,
+        "title": "CoinMarketCap",
+        "url": "https://coinmarketcap.com/currencies/!",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/coinmarketNav.gif"
+      },
+      {
+        "id": 2,
+        "title": "Coingecko",
+        "url": "https://www.coingecko.com/coins/!",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/coinGeckoNav.gif"
+      },
+      {
+        "id": 3,
+        "title": "Messari",
+        "url": "https://messari.io/asset/!",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/messeriNav.gif"
+      },
+      {
+        "id": 4,
+        "title": "Cryptorank",
+        "url": "https://cryptorank.io/price/!",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/cryptorankNav.gif"
+      },
+      {
+        "id": 5,
+        "title": "Dropstab",
+        "url": "https://dropstab.com/coins/!",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/dropstabNav.gif"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Token sale",
+    "default": false,
+    "links": [
+      {
+        "id": 1,
+        "title": "Messari",
+        "url": "https://messari.io/asset/!/profile/launch-and-initial-token-distribution",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/messeriNav.gif"
+      },
+      {
+        "id": 2,
+        "title": "Cryptorank",
+        "url": "https://cryptorank.io/ico/!",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/cryptorankNav.gif"
+      },
+      {
+        "id": 3,
+        "title": "Dropstab",
+        "url": "https://dropstab.com/coins/!/fundraising",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/dropstabNav.gif"
+      },
+      {
+        "id": 4,
+        "title": "Tokenomics",
+        "url": "https://www.coingecko.com/en/coins/!/tokenomics",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/coinGeckoNav.gif"
+      }
+
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Token unlocks",
+    "default": false,
+    "links": [
+      {
+        "id": 1,
+        "url": "https://token.unlocks.app/!",
+        "title": "Token Unlocks",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/tokenunlockNav.gif"
+      },
+      {
+        "id": 2,
+        "url": "https://dropstab.com/insights/vesting/!",
+        "title": "DropsTab",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/dropstabNav.gif"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "News",
+    "default": false,
+    "links": [
+      {
+        "id": 1,
+        "title": "Cryptopanic",
+        "url": "https://cryptopanic.com/news/!/",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/criptopanicNav.gif"
+      },
+      {
+        "id": 2,
+        "url": "https://www.coindesk.com/search?s=bitcoin&sort=1",
+        "title": "CoinDesk",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/coindeskNav.gif"
+      },
+      {
+        "id": 3,
+        "url": "https://cointelegraph.com/tags/bitcoin",
+        "title": "Cointelegraph",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/cointelegrafNav.gif"
+      },
+      {
+        "id": 1,
+        "url": "https://coinmarketcal.com/ru/?form%5Bdate_range%5D=07%2F01%2F2023+-+01%2F08%2F2024&form%5Bkeyword%5D=&form%5Bcoin%5D%5B%5D=binance-coin&form%5Bsort_by%5D=&form%5Bsubmit%5D=&form%5Bshow_reset%5D=",
+        "title": "CoinMarketCal",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/coinmarketcalNav.gif"
+      },
+      {
+        "id": 2,
+        "url": "https://coindar.org/ru/search?page=1&text=&start=2023-01-05&cats=&im=&rs=0&fav=0&coins=39&cap_from=0&cap_to=9999999999999&vol_from=0&vol_to=9999999999999&ex=&sort=0&order=0",
+        "title": "Coindar",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/coindarNav.gif"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Change",
+    "default": false,
+    "links": [
+      {
+        "id": 1,
+        "title": "BestChange",
+        "url": "https://www.bestchange.net/!-to-visa-mastercard-usd.html?p=1198170",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/bestchangeNav.gif"
+      },
+      {
+        "id": 2,
+        "title": "Converter",
+        "url": "https://www.coingecko.com/converter",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/coingecoconverterNav.gif"
+      },
+      {
+        "id": 3,
+        "title": "Markets",
+        "url": "https://www.coingecko.com/en/coins/!#markets",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/marketsNav.gif",
+        "urls": [
+          {
+            "id": 1,
+            "title": "Coingecko",
+            "url": "https://www.coingecko.com/en/coins/!#markets"
+          },
+          {
+            "id": 2,
+            "title": "CoinMarketCap",
+            "url": "https://coinmarketcap.com/currencies/!/markets/"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Binance",
+        "url": "https://www.binance.com/en/trade/!_USDT?ref=10106896",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/binanceNav.gif",
+        "urls": [
+          {
+
+            "title": "!>USDT",
+            "url": "https://www.binance.com/en/trade/!_USDT?ref=10106896"
+          },
+          {
+            "title": "!>EUR",
+            "url": "https://www.binance.com/en/trade/!_EUR?ref=10106896"}
+        ]
+      },
+      {
+        "id": 5,
+        "title": "OKX",
+        "url": "https://www.okx.com/trade-spot/!-usdt/1905037",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/okxNav.gif",
+        "urls": [
+          {
+
+            "title": "!>USDT",
+            "url": "https://www.okx.com/trade-spot/!-usdt/1905037"
+          },
+          {
+            "title": "!>DAI",
+            "url": "https://www.okx.com/trade-spot/!-dai/1905037"}
+        ]
+      },
+      {
+        "id": 6,
+        "title": "Bitget",
+        "url": "https://www.bitget.com/en/spot/!USDT_SPBL?from=referral&clacCode=5LUC5JDZ",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/bitgetNav.gif",
+        "urls": [
+          {
+
+            "title": "!>USDT",
+            "url": "https://www.bitget.com/en/spot/!USDT_SPBL?from=referral&clacCode=5LUC5JDZ"
+          },
+          {
+            "title": "!>DAI",
+            "url": "https://www.bitget.com/en/spot/!DAI_SPBL?from=referral&clacCode=5LUC5JDZ"}
+        ]
+      },
+      {
+        "id": 7,
+        "title": "MEXC",
+        "url": "https://www.mexc.com/exchange/!_USDT?inviteCode=1akFt",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/mexcNav.gif",
+        "urls": [
+          {
+
+            "title": "!>USDT",
+            "url": "https://www.mexc.com/exchange/!_USDT?inviteCode=1PcY4"
+          },
+          {
+            "title": "!>DAI",
+            "url": "https://www.mexc.com/exchange/!_DAI?inviteCode=1PcY4"}
+        ]
+      },
+      {
+        "id": 8,
+        "title": "Bybit",
+        "url": "https://www.bybit.com/trade/spot/!/USDT/?ref=R04EWK",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/bybitNav.gif",
+        "urls": [
+          {
+
+            "title": "!>USDT",
+            "url": "https://www.bybit.com/trade/spot/!/USDT/?ref=W6YXQE"
+          },
+          {
+            "title": "!>DAI",
+            "url": "https://www.bybit.com/trade/spot/!/DAI/?ref=W6YXQE"}
+        ]
+      },
+      {
+        "id": 9,
+        "title": "Kucoin",
+        "url": "https://www.kucoin.com/trade/!-USDT?rcode=2Hbgr",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/kucoinNav.gif",
+        "urls": [
+          {
+
+            "title": "!>USDT",
+            "url": "https://www.kucoin.com/trade/!-USDT?r=E47sGK"
+          },
+          {
+            "title": "!>DAI",
+            "url": "https://www.kucoin.com/trade/!-DAI?r=E47sGK"}
+        ]
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Review",
+    "default": false,
+    "links": [
+      {
+        "id": 1,
+        "title": "INP",
+        "url": "https://inp.one/cryptoworld/!",
+        "thumbnailUrl": "https://inp.one/apple-touch-icon.png"
+      },
+      {
+        "id": 1,
+        "title": "Medium",
+        "url": "https://inp.one/cryptoworld/!",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/mediumNav.gif"
+      },
+      {
+        "id": 1,
+        "title": "Whitepaper",
+        "url": "https://inp.one/cryptoworld/!",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/whitepaperNav.gif"
+      },
+      {
+        "id": 1,
+        "title": "Wikipedia",
+        "url": "https://inp.one/cryptoworld/!",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/wikiNav.gif"
+      },
+      {
+        "id": 1,
+        "title": "Document",
+        "url": "https://inp.one/cryptoworld/!",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/docsNav.gif"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Team",
+    "default": false,
+    "links": [
+      {
+        "id": 1,
+        "title": "Cypherhunter",
+        "url": "https://www.cypherhunter.com/p/",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/cryphunterNav.gif"
+      },
+      {
+        "id": 1,
+        "url": "https://en.wikipedia.org/wiki/Changpeng_Zhao",
+        "title": "Changpeng Zhao",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/czNav.gif",
+        "menuActive": true,
+        "urls": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Changpeng_Zhao",
+            "title": "Cypherhunter"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Changpeng_Zhao",
+            "title": "Wiki"
+          },
+          {
+            "url": "https://twitter.com/cz_binance",
+            "title": "Twitter"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "id": 9,
+    "title": "Social networks",
+    "default": false,
+    "alert": false,
+    "links": [
+      {
+        "id": 1,
+        "title": "Twitter",
+        "url": "https://twitter.com/!",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/twitterNav.gif"
+      },
+      {
+        "title": "Reddit",
+        "url": "https://www.reddit.com/r/!",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/redditNav.gif",
+        "id": 2
+      },
+      {
+        "title": "Telegram",
+        "url": "https://t.me/!_announcements",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/telegramNav.gif",
+        "id": 3
+      },
+      {
+        "title": "Facebook",
+        "url": "https://www.facebook.com/!",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/facebookNav.gif",
+        "id": 4
+      },
+      {
+        "title": "Instagram",
+        "url": "https://www.facebook.com/!",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/instagramNam.gif",
+        "id": 4
+      },
+      {
+        "title": "Linkedin",
+        "url": "https://www.linkedin.com/!",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/linkedinNav.gif",
+        "id": 4
+      },
+      {
+        "title": "YouTube",
+        "url": "https://www.facebook.com/!",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/youtubeNav.gif",
+        "id": 4
+      },
+      {
+        "title": "Discord",
+        "url": "https://t.me/!_announcements",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/discordNav.gif",
+        "id": 5
+      },
+      {
+        "title": "Github",
+        "url": "https://github.com/!",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/githubNav.gif",
+        "id": 6
+      },
+      {
+        "title": "Bitcointalk",
+        "url": "https://bitcointalk.org/!",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/bitcointalkNav.gif",
+        "id": 6
+      },
+      {
+        "title": "Chat",
+        "url": "https://bitcointalk.org/!",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/chatNav.gif",
+        "id": 6
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Usefully",
+    "links": [
+      {
+        "id": 1,
+        "url": "https://etherscan.com/",
+        "title": "Etherscan",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/etherscanNav.gif"
+      },
+      {
+        "id": 2,
+        "url": "https://bscscan.com/",
+        "title": "Bscscan",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/bscscanNav.gif"
+      },
+      {
+        "id": 2,
+        "url": "https://polygonscan.com/",
+        "title": "Polygonscan",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/polygonNav.gif"
+      },
+      {
+        "id": 1,
+        "url": "https://blockchair.com/litecoin",
+        "title": "Blockchair",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/blockchairNav.gif"
+      },
+      {
+        "id": 3,
+        "url": "!",
+        "title": "Smart Contract",
+        "desc": "Ethereum smart contract",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/smartcontractEthNav.gif"
+      },
+      {
+        "id": 4,
+        "url": "!",
+        "title": "Smart Contract",
+        "desc": "Binance smart contract",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/binanceSmartNav.gif"
+      },
+      {
+        "id": 4,
+        "url": "!",
+        "title": "Smart Contract",
+        "desc": "Polygon smart contract",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/smartpolygonNav.gif"
+      },
+      {
+        "id": 5,
+        "url": "https://app.multichain.org/#/router",
+        "title": "Bridge",
+        "desc": "App.multichain.org",
+        "thumbnailUrl": "https://inp.one/app-table/assets/thumbnails/multichainNav.gif"
+      }
+    ]
+  }
+]

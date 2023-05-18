@@ -1,0 +1,367 @@
+<div class="mt-6 max-w-content mx-auto">
+  <div class="h-4">
+    <mat-progress-bar *ngIf="isLoading"
+                      mode="indeterminate"
+                      class=""></mat-progress-bar>
+  </div>
+
+  <div class="p-1 transition-opacity relative duration-700 ease-in-out md:p-0" [class.opacity-0]="isLoading">
+    <div class="absolute h-full w-full z-10 duration-700 top-0 left-0" [class.hidden]="!isLoadingTable"></div>
+    <div class="flex flex-col" [class.opacity-0]="isLoading">
+      <div class="flex flex-row items-center justify-between"
+           [class.opacity-20]="CheckerSlider != 'slider'"
+           (click)="CheckerSlider='slider'"
+      >
+        <div class="flex flex-row items-center">
+          <!--          <mat-slide-toggle-->
+          <!--            [(ngModel)]="isChecked"-->
+          <!--            matTooltip="Фильтр" (change)="openFilter($event)">-->
+          <!--            <div class="flex flex-row items-center">-->
+          <!--              <mat-icon>view_cozy</mat-icon>-->
+          <!--            </div>-->
+          <!--          </mat-slide-toggle>-->
+          <!--          <div class="ml-4 h-11">-->
+          <!--            <mat-divider class="h-full" vertical="true"></mat-divider>-->
+          <!--          </div>-->
+          <div class="h-14">
+            <form>
+              <mat-form-field appearance="outline">
+                <mat-label>
+                  <span class="flex flex-row items-center">
+                    <mat-icon class="mr-1">search</mat-icon>
+                    <span>Search</span>
+                  </span></mat-label>
+                <input matInput
+                       aria-label="Search"
+                       [matAutocomplete]="auto"
+                       [formControl]="searchService.coinCtrl"
+                >
+                <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                  <mat-option class="auto-option" *ngFor="let coin of searchService.filteredCoins$ | async" [value]="coin.name" (onSelectionChange)="selectionClick(coin)">
+                    <div class="w-full flex flex-row items-center">
+                      <img class="mr-2 w-4 h-4 max-w-none" alt="Logo-coin" [src]="coin.img">
+                      <span class="">{{coin.name}}</span>
+                      <small class="flex-1 opacity-50 text-right">{{coin.symbol}}</small>
+                    </div>
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+            </form>
+          </div>
+
+          <div class="flex flex-row items-center ml-4">
+            <button mat-icon-button
+                    (click)="filterToggleFocus()"
+                    matTooltip="Filter"
+            ><mat-icon>filter_list</mat-icon></button>
+            <div class="h-14 w-56 relative overflow-hidden">
+              <mat-form-field class="filter-coin absolute" [ngClass]="{'filter-left':!filterToggle,'left-0':filterToggle}" appearance="outline">
+                <input matInput (keyup)="applyFilter($event)" #input>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <!--          <div class="ml-2">-->
+          <!--            <button mat-icon-button (click)="refreshTable()" [disabled]="isLoadingTable"-->
+          <!--                    matTooltip="Обновить Таблицу">-->
+          <!--              <mat-icon>refresh</mat-icon>-->
+          <!--            </button>-->
+          <!--          </div>-->
+
+        </div>
+
+        <div class="flex flex-row">
+          <!-- Toggle table add column-->
+
+<!--          <button class="mr-2" mat-icon-button [matMenuTriggerFor]="settingsTableMenu"><mat-icon>settings</mat-icon></button>-->
+<!--          <mat-menu  #settingsTableMenu="matMenu">-->
+            <div class="mr-2 flex flex-col max-sm:hidden" >
+              <mat-slide-toggle name="month" [(ngModel)]="settingsTableService.settingsTable.month" (change)="settingsTableService.set30d1yCheck($event)" >
+                <span class="opacity-50">30d</span>
+              </mat-slide-toggle>
+              <mat-slide-toggle name="year" class="mt-3" [(ngModel)]="settingsTableService.settingsTable.year" (change)="settingsTableService.set30d1yCheck($event)" >
+                <span class="opacity-50">1y</span>
+              </mat-slide-toggle>
+            </div>
+
+<!--          </mat-menu>-->
+
+          <div class="h-14" id="tableCoin">
+            <mat-form-field appearance="outline" class="w-28">
+              <mat-label>Page</mat-label>
+              <mat-select [(value)]="currentPage" (selectionChange)="selectionChange($event)">
+                <mat-option *ngFor="let p of optionPage" [value]="p">{{p}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+
+
+      </div>
+
+
+      <!--    <div class="mb-5"-->
+      <!--         [class.opacity-20]="CheckerSlider != 'buttonToggle'"-->
+      <!--         (click)="CheckerSlider='buttonToggle'"-->
+      <!--    >-->
+      <!--      <mat-button-toggle-group [(ngModel)]="viewer" aria-label="Font Style">-->
+      <!--        <mat-button-toggle value="slide"-->
+      <!--                           matTooltip="Открыть в SideBar" [matTooltipShowDelay]="500"-->
+      <!--        >-->
+      <!--          <mat-icon>view_sidebar</mat-icon>-->
+      <!--        </mat-button-toggle>-->
+      <!--        <mat-button-toggle value="modal"-->
+      <!--                           matTooltip="Открыть в Popup"-->
+      <!--                           [matTooltipShowDelay]="500"-->
+      <!--        >-->
+      <!--          <mat-icon>view_cozy</mat-icon>-->
+      <!--        </mat-button-toggle>-->
+      <!--      </mat-button-toggle-group>-->
+      <!--    </div>-->
+      <!--  </div>-->
+      <div class="h-5 flex flex-col justify-end">
+        <mat-progress-bar *ngIf="isLoadingTable"
+                          mode="indeterminate"
+                          class=""></mat-progress-bar>
+      </div>
+
+      <section class="mat-elevation-z3 overflow-auto rounded max-w-full duration-700 ease-in-out" [class.opacity-0]="isLoadingTable">
+        <table mat-table [dataSource]="dataSource" multiTemplateDataRows matSort class="relative">
+
+          <!-- Position Column -->
+          <ng-container matColumnDef="market_cap_rank" sticky>
+            <th class="" mat-header-cell *matHeaderCellDef>
+              No.
+            </th>
+            <td class="relative" mat-cell *matCellDef="let element">
+              <span class="count">{{element.market_cap_rank}}</span>
+              <div class="green-square absolute bottom-1 left-1 opacity-0 transition-opacity duration-700"
+                   [class.opacity-100]="isIntervalUpdate"
+              >
+              <span class="green-square absolute opacity-60"
+                    [class.animate-ping]="isIntervalUpdate"
+              >
+              </span>
+              </div>
+              <!-- Expanded panel -->
+              <div class="expanded-button absolute top-0.5 left-0.5 z-10">
+                <button mat-icon-button (click)="(expandedElement = expandedElement === element ? null : element)">
+                  <mat-icon>
+                    keyboard_arrow_down
+                  </mat-icon>
+                </button>
+              </div>
+            </td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="name" sticky>
+            <th class="text-center max-sm:w-full name-width" mat-header-cell *matHeaderCellDef>Name</th>
+            <td [id]="element.id" class="cursor-pointer max-sm:w-full name-width relative"
+                [ngClass]="{'opacity-20 cursor-default': _sideNavService.isLoading}"
+                [class.row-name]="!styleManagerService.isDark" matRipple mat-cell
+                *matCellDef="let element"
+            >
+              <div  class="flex flex-row items-center" >
+                <div class="td-img-name">
+                  <img *ngIf="element.name != 'All'" loading="lazy" class="w-4 h-4 max-w-none" src="{{element.image}}"
+                       alt="{{element.name}}-icon">
+                </div>
+
+                <!--              <span class="ml-2 whitespace-pre-wrap">{{element.name}}-->
+                <!--                <span class="opacity-50 text-xs"-->
+                <!--                      *ngIf="element.name != 'All'"-->
+                <!--                > {{element.symbol | uppercase}}-->
+                <!--                </span>-->
+                <!--              </span>-->
+                <div class="ml-2 flex max-sm:flex-col text-center md:justify-between md:text-left md:items-center w-full">
+                  <span class="whitespace-pre-wrap pr-0.5">{{element.name}}</span>
+                  <span *ngIf="element.name != 'All'" class="opacity-30 td-text-xs">{{element.symbol | uppercase}}</span>
+                </div>
+
+                <!--                <ng-template #fullName>-->
+                <!--                 <span>{{element.name}}</span>-->
+                <!--                </ng-template>-->
+
+
+              </div>
+              <div *ngIf="nameChecker == element.name" class="absolute text-center top-0 right-0 opacity-50">
+                <mat-icon class="text-sm">close</mat-icon>
+              </div>
+              <span *ngIf="nameChecker == element.name" class="absolute bottom-2 left-3 w-1/2 h-1 rounded overflow-hidden mat-mdc-slide-toggle mat-accent">
+<!--                <button mat-flat-button color="accent" class="w-full select-coin"></button>-->
+                <div class="w-full h-full select-coin"></div>
+              </span>
+              <a [routerLink]="'/coin/'+ element.id" class="absolute top-0 left-0 w-full h-full" (click)="clickToOpenSlider($event,element)"></a>
+            </td>
+          </ng-container>
+
+          <!-- Price Column -->
+          <ng-container matColumnDef="current_price">
+            <th class="td-min-pl" mat-header-cell *matHeaderCellDef mat-sort-header
+                sortActionDescription="Sort by weight">
+              Price
+            </th>
+            <td class="td-min-pl" mat-cell *matCellDef="let element"> {{numberFormatPrice(element.current_price)}} </td>
+          </ng-container>
+
+          <!-- Cap Column -->
+          <ng-container matColumnDef="market_cap">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by weight">
+              Cap
+            </th>
+            <td mat-cell *matCellDef="let element">{{numberFormat(element.market_cap)}}</td>
+          </ng-container>
+
+          <!-- 24h Column -->
+          <ng-container matColumnDef="price_change_percentage_24h">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by 24h">
+              24h
+            </th>
+            <td mat-cell *matCellDef="let element"
+                matTooltip="m: {{element.price_change_percentage_30d_in_currency | number : '1.0-2'}} %"
+                matTooltipShowDelay="200"
+                matTooltipTouchGestures="off"
+            >
+            <span [ngClass]="addTextClass(element.price_change_percentage_24h)">
+              <span
+                *ngIf="element.price_change_percentage_24h > 0">+</span>{{element.price_change_percentage_24h | number : "1.0-2"}} %
+            </span>
+            </td>
+          </ng-container>
+
+          <!-- 7d Column -->
+          <ng-container matColumnDef="price_change_percentage_7d_in_currency">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by 7d">
+              7d
+            </th>
+            <td mat-cell *matCellDef="let element"
+                matTooltip="y: {{element.price_change_percentage_1y_in_currency | number : '1.0-2'}} %"
+                matTooltipShowDelay="200"
+                matTooltipTouchGestures="off"
+            >
+            <span *ngIf="element.name !='All'" [ngClass]="addTextClass(element.price_change_percentage_7d_in_currency)">
+              <span
+                *ngIf="element.price_change_percentage_7d_in_currency > 0">+</span>{{element.price_change_percentage_7d_in_currency | number : "1.0-2"}}
+              %
+             </span>
+            </td>
+          </ng-container>
+
+          <!-- 30d -->
+          <ng-container matColumnDef="price_change_percentage_30d_in_currency">
+            <th [class.hidden]="!settingsTableService.settingsTable.month" mat-header-cell *matHeaderCellDef  mat-sort-header sortActionDescription="Sort by 30d">
+              30d
+            </th>
+            <td [class.hidden]="!settingsTableService.settingsTable.month" mat-cell *matCellDef="let element"
+            >
+            <span *ngIf="element.name !='All'" [ngClass]="addTextClass(element.price_change_percentage_30d_in_currency)">
+              <span
+                *ngIf="element.price_change_percentage_30d_in_currency > 0">+</span>{{element.price_change_percentage_30d_in_currency | number : "1.0-2"}}
+              %
+             </span>
+            </td>
+          </ng-container>
+
+          <!-- 1y -->
+          <ng-container matColumnDef="price_change_percentage_1y_in_currency">
+            <th [class.hidden]="!settingsTableService.settingsTable.year" mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by 1y">
+              1y
+            </th>
+            <td [class.hidden]="!settingsTableService.settingsTable.year" mat-cell *matCellDef="let element"
+            >
+            <span *ngIf="element.name !='All'" [ngClass]="addTextClass(element.price_change_percentage_1y_in_currency)">
+              <span
+                *ngIf="element.price_change_percentage_1y_in_currency > 0">+</span>{{element.price_change_percentage_1y_in_currency | number : "1.0-2"}}
+              %
+             </span>
+            </td>
+          </ng-container>
+
+
+          <!-- 7d cart -->
+          <ng-container matColumnDef="menuIcon">
+            <th mat-header-cell *matHeaderCellDef>
+              <button mat-icon-button>
+                <mat-icon>expand_more</mat-icon>
+              </button>
+            </th>
+            <td mat-cell *matCellDef="let element" class="cursor-pointer" (click)="openDialog(element)"
+                matTooltip="Chart of ({{element.symbol.toUpperCase()}})" matTooltipPosition="after"
+                [matTooltipDisabled]="isSliderToggle"
+                matTooltipTouchGestures="off">
+              <!--        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">-->
+              <!--          <mat-icon>more_vert</mat-icon>-->
+              <!--        </button>-->
+              <!--        <mat-menu #menu="matMenu">-->
+              <!--          <button mat-menu-item (click)="initModal(element)">-->
+              <!--            <mat-icon>dialpad</mat-icon>-->
+              <!--            <span>Redial</span>-->
+              <!--          </button>-->
+              <!--          <button mat-menu-item disabled="true">-->
+              <!--            <mat-icon>voicemail</mat-icon>-->
+              <!--            <span>Check voice mail</span>-->
+              <!--          </button>-->
+              <!--          <button mat-menu-item (click)="openSlider(element)">-->
+              <!--            <mat-icon>notifications_off</mat-icon>-->
+              <!--            <span>Disable alerts</span>-->
+              <!--          </button>-->
+              <!--        </mat-menu>-->
+
+              <img *ngIf="element.name != 'All'" loading="lazy" class="max-w-none w-32 h-11"
+                   src="https://www.coingecko.com/coins/{{parsUrls(element.image)}}/sparkline.svg"
+                   alt="chart {{element.id}}">
+            </td>
+          </ng-container>
+
+          <!-- Element expand -->
+          <ng-container matColumnDef="expandedDetail">
+            <td class="" mat-cell *matCellDef="let element" [attr.colspan]="displayedColumns.length">
+              <div class="expanded-detail-element"
+                   [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+                <div class="flex flex-col py-4">
+                  <div class="flex flex-wrap gap-2">
+                    <div class=""> {{element.market_cap_rank}} </div>
+                    <div class=""> {{element.symbol}} </div>
+                    <div class=""> {{element.name}} </div>
+                    <div class=""> {{numberFormatPrice(element.current_price)}} </div>
+                  </div>
+                  <div class="">
+                    {{element.market_cap}}
+                    <span class="example-element-description-attribution"> -- Wikipedia </span>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+
+
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr class="element-row relative" mat-row *matRowDef="let row; columns: displayedColumns;">
+          </tr>
+
+          <!-- Row with expand -->
+          <tr class="expanded-detail-row" mat-row *matRowDef="let element; columns: ['expandedDetail']"></tr>
+
+          <!-- Row shown when there is no matching data. -->
+          <tr class="element-row" *matNoDataRow>
+            <td class="p-4" colspan="4">No data matching the filter "{{checkInputValue()}}"</td>
+          </tr>
+
+
+        </table>
+      </section>
+
+      <div class="mt-6" id="tests">
+        <mat-form-field appearance="outline" class="w-28">
+          <mat-label>Page</mat-label>
+          <mat-select [(value)]="currentPage" (selectionChange)="selectionChange($event)">
+            <mat-option *ngFor="let p of optionPage" [value]="p">{{p}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+</div>
+

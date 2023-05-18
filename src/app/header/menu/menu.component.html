@@ -1,0 +1,85 @@
+<div id="mainMenu" class="logo ml-5 cursor-pointer flex flex-row items-center transition-opacity ease-in-out duration-300"
+     [class.opacity-0]="isLoading"
+     [matMenuTriggerFor]="menu"
+>
+    <img loading="lazy" src="https://inp.one/apple-touch-icon.png" width="64" height="64" alt="Logo INP">
+  <span class=" ml-5 opacity-50">BETA</span>
+</div>
+<mat-menu #menu="matMenu">
+  <a href="https://inp.one" target="_blank">
+    <button mat-menu-item>
+      <mat-icon>home</mat-icon><span>Home</span>
+    </button>
+  </a>
+  <a href="https://inp.one/cryptocurrency">
+    <button mat-menu-item>
+      <mat-icon>currency_bitcoin</mat-icon><span>Криптовалюты</span>
+    </button>
+  </a>
+  <a href="https://inp.one/developer" >
+    <button mat-menu-item>
+      <mat-icon>person_search</mat-icon><span>Криптоличности</span>
+    </button>
+  </a>
+  <a href="https://inp.one/birzhi">
+    <button mat-menu-item>
+      <mat-icon>insert_chart</mat-icon><span>Биржи</span>
+    </button>
+  </a>
+</mat-menu>
+<nav class="main-menu flex flex-row items-center mr-5">
+  <div class="">
+    <!--    <ng-container *ngFor="let items of dataMenu">-->
+    <!--      <div class="mr-5" *ngIf="!items.submenu; else subMenuContent">-->
+    <!--        <button mat-stroked-button >{{items.title}} </button>-->
+    <!--      </div>-->
+    <!--      <ng-template #subMenuContent>-->
+    <!--        <div [ngClass]="addClassNotLastChild(items.title)" [matMenuTriggerFor]="menu" #matMenuTrigger="matMenuTrigger">-->
+    <!--          <button *ngIf="items.title !== 'More'" mat-stroked-button>-->
+    <!--            {{items.title}}-->
+    <!--            <mat-icon class="transition-transform ease-in-out duration-200" [class.rotate-180]="matMenuTrigger.menuOpen">{{items.iconName}}-->
+    <!--            </mat-icon>-->
+    <!--          </button>-->
+    <!--&lt;!&ndash;      For icons menu            &ndash;&gt;-->
+    <!--            <button *ngIf="items.title == 'More'" mat-icon-button>-->
+    <!--              <mat-icon class="transition-transform ease-in-out duration-200 " [ngClass]="addClassToIconMenU(matMenuTrigger)">{{items.iconName}}-->
+    <!--              </mat-icon>-->
+    <!--            </button>-->
+    <!--&lt;!&ndash;      end icons menu             &ndash;&gt;-->
+    <!--          <mat-menu #menu="matMenu">-->
+    <!--            <div (mouseleave)="matMenuTrigger.closeMenu()">-->
+    <!--              <div *ngIf="items.title !== 'More'">-->
+    <!--                <button mat-menu-item  *ngFor="let subItems of items.submenu" >-->
+    <!--                  {{subItems.title}}-->
+    <!--                </button>-->
+    <!--              </div>-->
+    <!--              &lt;!&ndash;      Menu with icons buttons &ndash;&gt;-->
+    <!--              <div *ngIf="items.title == 'More'">-->
+    <!--                <button mat-menu-item  *ngFor="let subItems of items.submenu">-->
+    <!--                  <mat-icon>{{subItems.iconName}}</mat-icon>{{subItems.title}}-->
+    <!--                </button>-->
+    <!--              </div>-->
+    <!--              &lt;!&ndash;        end menu icons buttons&ndash;&gt;-->
+    <!--              <button *ngIf="items.title == 'More'"-->
+    <!--                mat-menu-item-->
+    <!--                (click)="toggleLightTheme()"-->
+    <!--                class="theme-toggle"-->
+    <!--                aria-label="Toggle Dark Theme">-->
+    <!--                <mat-icon>{{isDark ? "light_mode" : "dark_mode" }}</mat-icon>-->
+    <!--                <span>{{isDark ? "Светленький" : "Темненький" }}</span>-->
+    <!--              </button>-->
+    <!--            </div>-->
+
+    <!--          </mat-menu>-->
+    <!--        </div>-->
+    <!--      </ng-template>-->
+
+    <!--    </ng-container>-->
+    <button mat-icon-button
+            (click)="toggleLightTheme()"
+            class="theme-toggle"
+            aria-label="Toggle Dark Theme">
+      <mat-icon>{{isDark ? "light_mode" : "dark_mode" }}</mat-icon>
+    </button>
+  </div>
+</nav>
