@@ -11,13 +11,13 @@
         }
       },
       "root": "",
-      "sourceRoot": "src",
+      "sourceRoot": "src/",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/crypto-table-ajax-popup",
+            "outputPath": "dist/app-table",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -30,7 +30,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles.scss",
+              {
+                "input": "@angular/material/prebuilt-themes/purple-green.css",
+                "bundleName": "dark-theme",
+                "inject": false
+              }
             ],
             "scripts": []
           },
@@ -93,7 +99,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles.scss",
+              {
+                "input": "@angular/material/prebuilt-themes/purple-green.css",
+                "bundleName": "dark-theme",
+                "inject": false
+              }
             ],
             "scripts": []
           }
